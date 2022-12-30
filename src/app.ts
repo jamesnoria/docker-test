@@ -1,3 +1,5 @@
+// docker run -d --name app -p 3000:5000 --env MONGO_URL=mongodb://db:27017/test nodeapi
+
 import mongoose from 'mongoose';
 import express from 'express';
 import User from './db/userModel';
@@ -8,7 +10,7 @@ app.use(express.json());
 mongoose.set('strictQuery', true);
 
 mongoose
-  .connect('mongodb://0.0.0.0:3000/')
+  .connect(process.env.MONGO_URL!)
   .then(() => {
     console.log('Connected to MongoDB');
   })
