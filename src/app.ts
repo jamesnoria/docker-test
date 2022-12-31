@@ -19,7 +19,7 @@ mongoose
   });
 
 app.get('/', (req, res) => {
-  res.json({ message: 'Hello World!' });
+  res.json({ message: 'Hello World James!' });
 });
 
 app.post('/users', (req, res) => {

@@ -18,7 +18,7 @@ mongoose_1.default
     console.log('Error connecting to MongoDB', err);
 });
 app.get('/', (req, res) => {
-    res.json({ message: 'Hello World!' });
+    res.json({ message: 'Hello World! James' });
 });
 app.post('/users', (req, res) => {
     const { name, username } = req.body;

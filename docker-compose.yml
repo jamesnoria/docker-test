@@ -2,13 +2,17 @@ version: '3.8'
 
 services:
   app:
-    image: nodeapi
+    build: .
     environment:
       - MONGO_URL=mongodb://db:27017/test
     depends_on:
       - db
     ports:
       - '3000:5000'
+    volumes:
+      - .:/usr/src
+      - /usr/src/node_modules
+    command: yarn dev
 
   db:
     image: mongo
